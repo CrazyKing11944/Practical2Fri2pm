@@ -1,6 +1,7 @@
 package com.example.practical2fri2pm
 
 import android.content.Context
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity()
         editText.visibility = View.GONE
         view.visibility = View.GONE
         nicknameTextView.visibility = View.VISIBLE
+        nicknameTextView.paintFlags = nicknameTextView.paintFlags and Paint.UNDERLINE_TEXT_FLAG.inv()
 
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE)
             as InputMethodManager
@@ -48,5 +50,6 @@ class MainActivity : AppCompatActivity()
         editText.visibility = View.VISIBLE
         doneButton.visibility = View.VISIBLE
         view.visibility = View.GONE
+
     }
 }
